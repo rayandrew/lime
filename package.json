@@ -1,0 +1,11 @@
+{
+  "name": "lime",
+  "version": "0.0.1",
+  "description": "Lime : Line Bots for URL Shortener",
+  "main": "server.js",
+  "author": "Ray Andrew <raydreww@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "shortid": "^2.2.8"
+  }
+}
