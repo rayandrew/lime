@@ -2,10 +2,39 @@
   "name": "lime",
   "version": "0.0.1",
   "description": "Lime : Line Bots for URL Shortener",
-  "main": "server.js",
   "author": "Ray Andrew <raydreww@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start-client": "cd client && react-scripts start",
+    "build-client": "cd client && react-scripts build",
+    "test-client": "cd client && react-scripts test --env=jsdom",
+    "eject-client": "cd client && react-scripts eject",
+    "start": "concurrently \"PORT=3000 yarn start-client\" \"cd server && PORT=3001 PORT_HTTPS=3002 nodemon server.js\"",
+    "start:prod": "concurrently \"cd server && NODE_ENV=production node server.js\""
+  },
   "dependencies": {
-    "shortid": "^2.2.8"
+    "@line/bot-sdk": "^2.0.0",
+    "api-error-handler": "^1.0.0",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.2",
+    "config": "^1.26.2",
+    "express": "^4.15.4",
+    "fs-readdir-recursive": "^1.0.0",
+    "http-errors": "^1.6.2",
+    "lodash": "^4.17.4",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.11.8",
+    "mongoose-paginate": "^5.0.3",
+    "normalizr": "^3.2.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "shortid": "^2.2.8",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0",
+    "react-scripts": "1.0.11",
+    "rimraf": "^2.6.1"
   }
 }

@@ -1,0 +1,32 @@
+{
+  "port": "LIME_API_PORT",
+  "portHttps": "LIME_API_HTTPS_PORT",
+  "secret": "LIME_API_SECRET",
+
+  "mongodb": {
+    "url": "MONGODB_URL",
+    "collection": "MONGODB_COLLECTION"
+  },
+
+  "line": {
+    "channelAccessToken": "LINE_ACCESS_TOKEN",
+    "channelSecret": "LINE_SECRET"
+  },
+
+  "redis": {
+    "host": "REDIS_HOST",
+    "port": "REDIS_PORT"
+  },
+
+  "winston": {
+    "console": {
+        "level": "debug",
+        "prettyPrint": true,
+        "colorize": true,
+        "silent": false,
+        "timestamp": true
+    }
+  },
+
+  "routePrefix": "LIME_API_ROUTE_PREFIX"
+}

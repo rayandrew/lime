@@ -1,0 +1,32 @@
+{
+    "port": 3000,
+    "portHttps": 3002,
+    "secret": "[ Insert secret here ]",
+
+    "mongodb": {
+        "url": "mongodb://mongo:27017/lime",
+        "collection": "lime"
+    },
+
+    "line": {
+        "channelAccessToken": "FRmnio4D3JJgEQEYtCITpSqbZZ8Yarq2tywXg4OxSWZ+qGr4XZO2beTzVAr2qDPvjRlg6MHonZxf0rbdsqX3x4atyE+aWTFBtyGSyHBlml7OwffEPX6NQcHzFrkYySjSmyoKGQOcW0diwhQymoOfpAdB04t89/1O/w1cDnyilFU=",
+        "channelSecret": "16f6c90702b259d451fd7a50ad0480e0"
+    },
+
+    "redis": {
+        "host": "127.0.0.1",
+        "port": 6379
+    },
+
+    "winston": {
+        "console": {
+            "level": "debug",
+            "prettyPrint": true,
+            "colorize": true,
+            "silent": false,
+            "timestamp": true
+        }
+    },
+
+    "routePrefix": "/api"
+}

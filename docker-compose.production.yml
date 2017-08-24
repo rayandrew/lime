@@ -1,0 +1,38 @@
+# Docker Compose file for development
+
+version: '2.1'
+services:
+  app:
+    build: .
+    command: 'yarn start:prod'
+    depends_on:
+      - mongo
+      - redis
+    volumes: # TODO: use in-container files instead in production (?)
+      - .:/usr/src/lime
+      - /usr/src/lime/node_modules
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production # TODO: change this to 'production' on production
+      LIME_API_PORT: 3000
+      LIME_API_HTTPS_PORT: 3002
+      LIME_API_SECRET: "[ lime_api_secret ]" # TODO: change this on production
+      MONGODB_URL: "mongodb://mongo:27017/lime"
+      MONGODB_COLLECTION: "lime"
+      LINE_ACCESS_TOKEN: "FRmnio4D3JJgEQEYtCITpSqbZZ8Yarq2tywXg4OxSWZ+qGr4XZO2beTzVAr2qDPvjRlg6MHonZxf0rbdsqX3x4atyE+aWTFBtyGSyHBlml7OwffEPX6NQcHzFrkYySjSmyoKGQOcW0diwhQymoOfpAdB04t89/1O/w1cDnyilFU="
+      LINE_SECRET: "16f6c90702b259d451fd7a50ad0480e0"
+      REDIS_HOST: redis
+      REDIS_PORT: 6379 # Using default redis image port
+    restart: always # TODO: change this to 'always' on production
+  mongo:
+    image: "mongo"
+    container_name: "mongo"
+    environment:
+          - MONGO_DATA_DIR=/data/db
+          - MONGO_LOG_DIR=/dev/null
+    command: mongod --smallfiles --logpath /dev/null
+    restart: always  # TODO: change this to 'always' on production
+  redis:
+    image: "redis:alpine"
+    restart: always # TODO: change this to 'always' on production

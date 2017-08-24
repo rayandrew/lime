@@ -1,0 +1,8 @@
+{
+  "name": "lime-client",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Ray Andrew",
+  "proxy": "http://localhost:3001",
+  "homepage": "/public"
+}
